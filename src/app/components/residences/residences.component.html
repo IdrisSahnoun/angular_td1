@@ -17,6 +17,8 @@
         <td><button (click)="showAddress(element)">Show Address</button></td>
     </tr>
 </table>
-<div *ngIf="hide">
+<div *ngIf="hide && selectedResidence.address!='inconnu'">
     {{selectedResidence.address}}
 </div>
+<div *ngIf="hide && selectedResidence.address=='inconnu'">
+    <p>Address not available</p>
